@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 9d046167bee67cd4283eb073f863c9b8
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Ari_Sprite
+    21300002: Ari_Sprite_L1
+    21300004: Ari_Sprite_L1
+    21300006: Ari_Sprite_R1
+    21300008: Ari_Sprite_L2
+    21300010: Ari_Sprite_F1
+    21300012: Ari_Sprite_R2
+    21300014: Ari_Sprite_L3
+    21300016: Ari_Sprite_R1
+    21300018: Ari_Sprite_R3
+    21300020: Ari_Sprite_L2
+    21300022: Ari_Sprite_F2
+    21300024: Ari_Sprite_R2
+    21300026: Ari_Sprite_L3
+    21300028: Ari_Sprite_F3
+    21300030: Ari_Sprite_R3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 25
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Ari_Sprite_L1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 157
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ari_Sprite_F1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 157
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ari_Sprite_R1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 157
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ari_Sprite_L2
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 99
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ari_Sprite_F2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 99
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ari_Sprite_R2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 99
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ari_Sprite_L3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 36
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ari_Sprite_F3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 36
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Ari_Sprite_R3
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 36
+        width: 40
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

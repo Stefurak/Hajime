@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: c93330e4811d5db4dbc8c6e0d16b7bc2
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - eBullet: {fileID: 100000, guid: 975669cc77a26c24b8af65c5201f2bc3, type: 2}
+  - bulletScript: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

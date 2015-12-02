@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: fbef4a65bae6a624eb5a68d7ca11b701
+timeCreated: 1448033808
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - eBoss: {instanceID: 0}
+  - player: {instanceID: 0}
+  - Object1: {instanceID: 0}
+  - mayumi: {fileID: 11400000, guid: 6a3fd1b6b76067c49a3c5e480c0eb290, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

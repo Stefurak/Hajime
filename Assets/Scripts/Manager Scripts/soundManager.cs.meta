@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 34d80de0680abfe4f93d80f1802c0b35
+timeCreated: 1445539039
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - audioPlayer: {fileID: 8200000, guid: 9530e64eb23afcc44a502d1a2f54b7bf, type: 2}
+  - Title: {fileID: 8300000, guid: 2824d4cc4265dee4cbf8cb06060bab41, type: 3}
+  - Stage1: {fileID: 8300000, guid: feae9367dabcbf34995921bb761b8770, type: 3}
+  - style1Bomb: {fileID: 8300000, guid: 0e27c7e3123fbf6469ce62ce1f5c192f, type: 3}
+  - style2Bomb: {fileID: 8300000, guid: c2bb56c463b61bc4baba07cbb9a861ad, type: 3}
+  - enemyDeath1: {fileID: 8300000, guid: 5603b95f4f837994fa3e65e4c9a28fb8, type: 3}
+  - enemyDeath2: {fileID: 8300000, guid: 76c67528aab97b944841ed35b017a203, type: 3}
+  - enemyBossHit: {fileID: 8300000, guid: 0d63015aa71adb54bbbe0451288817d1, type: 3}
+  - bulletFX: {fileID: 8300000, guid: 4c62f20b943998248b52ed42f65dce1d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
