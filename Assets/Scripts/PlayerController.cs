@@ -20,6 +20,8 @@ public class PlayerController : NetworkBehaviour
     public GameObject bullet;
     public GameObject hitBox;
     public PlayerBullet bulletScript;
+    [SyncVar(hook ="UpdateHealthGraphic")]
+    public float health;
 
     // Speed is how fast Character moves.
     [HideInInspector]
@@ -55,6 +57,10 @@ public class PlayerController : NetworkBehaviour
         sManager = GameObject.Find("GameManager").GetComponent<soundManager>();
     }
 
+    public void UpdateHealthGraphic(float health)
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
@@ -281,6 +287,8 @@ public class PlayerController : NetworkBehaviour
         #endregion
 
         //Call a Coroutine to make a Firing Cooldown, Sets Fire to true for a couple seconds.
+
+
         StartCoroutine(bulletTimer());
 
     }
