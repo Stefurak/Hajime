@@ -146,14 +146,15 @@ public class PlayerController : NetworkBehaviour
         #region Shoot
         if (Input.GetButton("Shoot") || Input.GetKey(KeyCode.Z))
         {
-            sManager.audioPlayer.PlayOneShot(sManager.bulletFX, 0.2f);
+           
             // If Not fired yet, fire bullets based of Enum
             if (!fired)
             {
+                sManager.audioPlayer.PlayOneShot(sManager.bulletFX, 0.2f);
                 switch (playerStyle)
                 {
                     case styleState.styleOne:
-                        fireBulletStyleOne();
+                        CmdfireBulletStyleOne();
                         break;
                     case styleState.styleTwo:
                         fireBulletStyleTwo();
@@ -188,7 +189,8 @@ public class PlayerController : NetworkBehaviour
         #endregion
     }
 
-    void fireBulletStyleOne() {
+    [Command]
+    void CmdfireBulletStyleOne() {
 
         switch (playerPower)
         {
@@ -226,6 +228,7 @@ public class PlayerController : NetworkBehaviour
         #region Bullet 1
         GameObject Object1 = Instantiate(bullet,
             transform.position, Quaternion.identity) as GameObject;
+        NetworkServer.Spawn(Object1);
         #endregion
 
         #region Bullet 2
@@ -242,6 +245,7 @@ public class PlayerController : NetworkBehaviour
 
         GameObject Object2 = Instantiate(bullet,
             offsetPos, Quaternion.Euler(0, 0, angle)) as GameObject;
+        NetworkServer.Spawn(Object2);
         bulletScript = Object2.GetComponent<PlayerBullet>();
         bulletScript.dirVel = Quaternion.Euler(0, 0, angle) * Object2.GetComponent<PlayerBullet>().dirVel;
         #endregion
@@ -259,6 +263,7 @@ public class PlayerController : NetworkBehaviour
         }
         GameObject Object3 = Instantiate(bullet,
             offsetPos, Quaternion.Euler(0, 0, angle)) as GameObject;
+        NetworkServer.Spawn(Object3);
         bulletScript = Object3.GetComponent<PlayerBullet>();
         bulletScript.dirVel = Quaternion.Euler(0, 0, angle) * Object3.GetComponent<PlayerBullet>().dirVel;
         #endregion

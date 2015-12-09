@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class levelManager : MonoBehaviour
+public class levelManager : NetworkBehaviour
 {
 
     //KEEP TRACK OF GAMEOBJECTS TO RESPAWN AND SUCH
     //If ARI is dead, TURN BULLETS INTO BLEH 
 
     public Vector3 offsetPos;
-    public GameObject eBoss, player, Object1;
+    public GameObject eBoss, player;
     public GameObject bg1, bg2;
     public Boss_Mayumi mayumi;
 
@@ -17,10 +18,11 @@ public class levelManager : MonoBehaviour
     #region BackgroundScrolling
     private enum backGroundState { Scrolling, Idle }
     private backGroundState bgState;
-
+    private GameObject Object1;
     public Vector3 bgDirVel; //direction the background will scroll. Downard only atm
     public float bgSpeed; //speed the background will scroll.
     public float bgAccel; //Acceleration for the scroll speed.
+
     #endregion
 
     // Use this for initialization
@@ -44,9 +46,13 @@ public class levelManager : MonoBehaviour
         // ^ will include Minibosses.
         // j increments Afterwards and resumes the previous enemy spawn loop
         // if a number of waves in i and J have looped then spawn boss
-        if (bossSpawn == false)
+
+        if (isServer)
         {
-            StartCoroutine(spawnBoss());
+            if (bossSpawn == false)
+            {
+                StartCoroutine(spawnBoss());
+            }
         }
 
     }
@@ -73,17 +79,19 @@ public class levelManager : MonoBehaviour
     IEnumerator spawnBoss()
     {
         bossSpawn = true;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(5f);
         #region Mayumi
 
         offsetPos = new Vector3(0, 10, 0);
 
         Object1 = Instantiate(eBoss,
         offsetPos, Quaternion.identity) as GameObject;
+        NetworkServer.Spawn(Object1);
         mayumi = Object1.GetComponent<Boss_Mayumi>();
         Object1.transform.parent = GameObject.Find("World").transform;
-        #endregion
         
+        #endregion
+
     }
     
 

@@ -79,7 +79,7 @@ public class beginState : IStateBase
         #endregion
 
         //Don't erase this is for controller Input!
-        #region Select Button code
+        /*#region Select Button code
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Bomb") || Input.GetButtonDown("Shoot") && count == 0)
         {
             gManager.SwitchState(new playState(gManager, sManager));
@@ -106,7 +106,7 @@ public class beginState : IStateBase
             Debug.Log("Exit");
             Debug.Log(count);
         }
-        #endregion
+        #endregion*/
 
         #region Cancel Button Code
         //if (getButtonDown("Cancel")) {}

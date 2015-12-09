@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class PlayerBullet : MonoBehaviour
+public class PlayerBullet : NetworkBehaviour
 {
 
     #region Fields
@@ -37,7 +38,7 @@ public class PlayerBullet : MonoBehaviour
         //Border Collisions Right and left.
         if (transform.position.x >= 10.9f || transform.position.x <= -13.0f || transform.position.y >= 12.6f || transform.position.y <= -12.6f)
         {
-            Destroy(transform.gameObject);
+            NetworkServer.Destroy(transform.gameObject);
         }
         #endregion
     }
@@ -46,7 +47,7 @@ public class PlayerBullet : MonoBehaviour
         if (c.gameObject.tag == "Enemy")
         {
             c.gameObject.GetComponent<Boss_Mayumi>().decreaseHealth();
-            Destroy(transform.gameObject);
+            NetworkServer.Destroy(transform.gameObject);
             
         }
     }

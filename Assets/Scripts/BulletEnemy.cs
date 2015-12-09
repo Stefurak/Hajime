@@ -44,9 +44,9 @@ public class BulletEnemy : MonoBehaviour
 
         #region Set Scripts (Player & Enemy)
         //get these for getting their positions
-        if (GameObject.Find("Ari") != null)
+        if (GameObject.FindGameObjectsWithTag("Player") != null)
         {
-            player = GameObject.Find("Ari");
+            player = GameObject.FindGameObjectWithTag("Player");
             playerScript = player.GetComponent<PlayerController>();
         }
         if (GameObject.Find("Mayumi") != null)

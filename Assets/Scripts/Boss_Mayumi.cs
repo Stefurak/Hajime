@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 // Things to do: 
 // 1. Remove all bullets when health = 0
@@ -9,7 +10,7 @@ using System.Collections;
 // 5. Ari Butterfly Bullets (Animation | Creation).
 // 6. Bomb (Clear Bullets, Kill enemies, hurt boss).
 
-public class Boss_Mayumi : MonoBehaviour
+public class Boss_Mayumi : NetworkBehaviour
 {
     #region Fields
     //Each state will feature different movement and bullet shot's
@@ -843,6 +844,7 @@ public class Boss_Mayumi : MonoBehaviour
         GameObject Object1 = Instantiate(eBullet,
         offsetPos, Quaternion.Euler(0,0,angle)) as GameObject;
         Object1.transform.parent = transform.parent;
+        NetworkServer.Spawn(Object1);
         bulletScript = Object1.GetComponent<BulletEnemy>();
         bulletScript.eBulletState = BulletEnemy.bulletState.Target;
         bulletScript.speed = 1f;
@@ -865,6 +867,7 @@ public class Boss_Mayumi : MonoBehaviour
 
         GameObject Object1 = Instantiate(eBullet, offsetPos, Quaternion.Euler(0, 0, angle)) as GameObject;
         Object1.transform.parent = transform.parent;
+        NetworkServer.Spawn(Object1);
         bulletScript = Object1.GetComponent<BulletEnemy>();
         bulletScript.eBulletState = BulletEnemy.bulletState.Wave;
         bulletScript.speed = 5f;
@@ -877,6 +880,7 @@ public class Boss_Mayumi : MonoBehaviour
 
         GameObject Object2 = Instantiate(eBullet, offsetPos, Quaternion.Euler(0, 0, angle)) as GameObject;
         Object2.transform.parent = transform.parent;
+        NetworkServer.Spawn(Object2);
         bulletScript = Object2.GetComponent<BulletEnemy>();
         bulletScript.eBulletState = BulletEnemy.bulletState.Wave;
         bulletScript.speed = 5f;
@@ -895,6 +899,7 @@ public class Boss_Mayumi : MonoBehaviour
         GameObject Object1 = Instantiate(eBullet,
         offsetPos, Quaternion.Euler(0, 0, angle)) as GameObject;
         Object1.transform.parent = transform.parent;
+        NetworkServer.Spawn(Object1);
         bulletScript = Object1.GetComponent<BulletEnemy>();
         bulletScript.eBulletState = BulletEnemy.bulletState.Target;
         bulletScript.accel = 2.5f;
@@ -917,6 +922,7 @@ public class Boss_Mayumi : MonoBehaviour
 
         GameObject Object1 = Instantiate(eBullet, offsetPos, Quaternion.Euler(0, 0, angle)) as GameObject;
         Object1.transform.parent = transform.parent;
+        NetworkServer.Spawn(Object1);
         bulletScript = Object1.GetComponent<BulletEnemy>();
         bulletScript.eBulletState = BulletEnemy.bulletState.Straight;
         bulletScript.speed = 5f;
@@ -929,6 +935,7 @@ public class Boss_Mayumi : MonoBehaviour
 
         GameObject Object2 = Instantiate(eBullet, offsetPos, Quaternion.Euler(0, 0, angle)) as GameObject;
         Object2.transform.parent = transform.parent;
+        NetworkServer.Spawn(Object2);
         bulletScript = Object2.GetComponent<BulletEnemy>();
         bulletScript.eBulletState = BulletEnemy.bulletState.Straight;
         bulletScript.speed = 5f;
@@ -947,6 +954,7 @@ public class Boss_Mayumi : MonoBehaviour
         GameObject Object1 = Instantiate(eBullet,
         offsetPos, Quaternion.Euler(0, 0, angle)) as GameObject;
         Object1.transform.parent = transform.parent;
+        NetworkServer.Spawn(Object1);
         bulletScript = Object1.GetComponent<BulletEnemy>();
         bulletScript.eBulletState = BulletEnemy.bulletState.Target;
         bulletScript.accel = 2.5f;
@@ -969,6 +977,7 @@ public class Boss_Mayumi : MonoBehaviour
 
         GameObject Object1 = Instantiate(eBullet, offsetPos, Quaternion.Euler(0, 0, angle)) as GameObject;
         Object1.transform.parent = transform.parent;
+        NetworkServer.Spawn(Object1);
         bulletScript = Object1.GetComponent<BulletEnemy>();
         bulletScript.eBulletState = BulletEnemy.bulletState.Straight;
         bulletScript.speed = 5f;
@@ -981,6 +990,7 @@ public class Boss_Mayumi : MonoBehaviour
 
         GameObject Object2 = Instantiate(eBullet, offsetPos, Quaternion.Euler(0, 0, angle)) as GameObject;
         Object2.transform.parent = transform.parent;
+        NetworkServer.Spawn(Object2);
         bulletScript = Object2.GetComponent<BulletEnemy>();
         bulletScript.eBulletState = BulletEnemy.bulletState.Straight;
         bulletScript.speed = 5f;
