@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
 
     #region Fields
@@ -57,8 +58,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InputManager();
-        
+        if (isLocalPlayer)
+        {
+            InputManager();
+        }
         BorderCollisionCheck();
         //Movement
         transform.Translate(xMove, yMove, 0);
