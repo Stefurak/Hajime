@@ -19,7 +19,7 @@ public class loseState : IStateBase
         Debug.Log("LostState");
         if (Input.GetKeyUp(KeyCode.A))
         {
-            gManager.SwitchState(new beginState(gManager, sManager));
+            //gManager.SwitchState(new beginState(gManager, sManager));
         }
     }
 }

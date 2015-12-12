@@ -11,7 +11,11 @@ public class levelManager : NetworkBehaviour
     public Vector3 offsetPos;
     public GameObject eBoss, player;
     public GameObject bg1, bg2;
+    public GameObject gManager;
     public Boss_Mayumi mayumi;
+    
+    public soundManager sManager;
+
 
     public bool bossSpawn;
 
@@ -27,7 +31,19 @@ public class levelManager : NetworkBehaviour
 
     // Use this for initialization
     void Start () {
-        
+        sManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<soundManager>();
+
+        Debug.Log("We got here Stage1 not set yet.");
+        Debug.Log(sManager.currentSong);
+
+        sManager.audioPlayer.Stop();
+        sManager.songPlaying = false;
+        sManager.currentSong = soundManager.songState.Stage1;
+        //sManager.audioPlayer.Play();
+
+        //Debug.Log("We got here Stage1 set.");
+        //Debug.Log(sManager.currentSong);
+
         bgDirVel = new Vector3(0, -1, 0); // direction we're going to scroll
         bgSpeed = 5.0f; //speed of scroll
     }

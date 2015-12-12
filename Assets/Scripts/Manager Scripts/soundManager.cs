@@ -10,7 +10,7 @@ public class soundManager : MonoBehaviour {
     public AudioSource audioPlayer;
     public enum songState
     {
-        Title,
+        Off, Title,
         Stage1, Boss1,
         Stage2, Boss2,
         Stage3, Boss3,
@@ -48,58 +48,55 @@ public class soundManager : MonoBehaviour {
     void Start()
     {
         DontDestroyOnLoad(transform.gameObject);
+        songPlaying = false;
         //Set The state to start in here
     }
 
     void Update()
     {
-        
-        //if (activeState != null)
-        //{
-            
-            //call the active states update
-            #region Song Enumeration
-            if (!songPlaying)
-            {
+        //call the active states update
+        #region Song Enumeration
+        if (!songPlaying)
+        {
             switch (currentSong)
-                {
-                    case songState.Title:
-                        audioPlayer.PlayOneShot(Title, 0.5f);
-                        songPlaying = true;
-                        break;
-                    case songState.Stage1:
-                        audioPlayer.PlayOneShot(Stage1, 0.3f);
-                        
-                        songPlaying = true;
-                        break;
-                    case songState.Boss1:
-                        break;
-                    case songState.Stage2:
-                        break;
-                    case songState.Boss2:
-                        break;
-                    case songState.Stage3:
-                        break;
-                    case songState.Boss3:
-                        break;
-                    case songState.Stage4:
-                        break;
-                    case songState.Boss4:
-                        break;
-                    case songState.Stage5:
-                        break;
-                    case songState.Boss5:
-                        break;
-                    case songState.Stage6:
-                        break;
-                    case songState.Boss6:
-                        break;
-                }
+            {
+                case songState.Off:
+                    break;
+                case songState.Title:
+                    audioPlayer.PlayOneShot(Title, 0.5f);
+                    songPlaying = true;
+                    break;
+                case songState.Stage1:
+                    Debug.Log("Why is this not playing!!!!!!!.");
+                    audioPlayer.PlayOneShot(Stage1, 0.3f);
+                    songPlaying = true;
+                    break;
+                case songState.Boss1:
+                    break;
+                case songState.Stage2:
+                    break;
+                case songState.Boss2:
+                    break;
+                case songState.Stage3:
+                    break;
+                case songState.Boss3:
+                    break;
+                case songState.Stage4:
+                    break;
+                case songState.Boss4:
+                    break;
+                case songState.Stage5:
+                    break;
+                case songState.Boss5:
+                    break;
+                case songState.Stage6:
+                    break;
+                case songState.Boss6:
+                    break;
             }
+        }
             #endregion
 
-           //activeState.StateUpdate();
-        //}
     }
 
 }

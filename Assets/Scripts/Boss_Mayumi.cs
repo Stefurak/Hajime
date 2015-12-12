@@ -19,7 +19,7 @@ public class Boss_Mayumi : NetworkBehaviour
     //Bosses 5-6 Will feature up to 5-6 states.
     //Patterns are the same but add more and more as it progresses.
     //Spells are different each time never the same.
-    private enum healthState { Pattern1, Spell1, Pattern2, Spell2, Pattern3, Spell3, Defeated }
+    private enum healthState { PlayerDead, Pattern1, Spell1, Pattern2, Spell2, Pattern3, Spell3, Defeated }
     private healthState enemyHealth;
 
     public GameObject eBullet;
@@ -72,6 +72,8 @@ public class Boss_Mayumi : NetworkBehaviour
                 timeValue.x = timeValue.y;
                 reseting = false;
                 paraMoveReset = false;
+                //if player is dead 
+                // Save Enum state, set current state to Playerdeafeted
                 SwitchPatterns();
             }
             transform.position = ((1 - timeValue.x) * startPos) + (timeValue.x * resetPos);
@@ -161,6 +163,8 @@ public class Boss_Mayumi : NetworkBehaviour
     {
         switch (enemyHealth)
         {
+            case healthState.PlayerDead:
+                break;
             case healthState.Pattern1:
                 MovePattern(0, 5, 0);
                 StartCoroutine(startFiringPattern11(10, 1f, 0.5f));

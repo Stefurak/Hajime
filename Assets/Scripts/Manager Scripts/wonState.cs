@@ -19,7 +19,7 @@ public class wonState : IStateBase
         Debug.Log("WonState");
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            gManager.SwitchState(new loseState(gManager, sManager));
+            //gManager.SwitchState(new loseState(gManager, sManager));
         }
     }
 }

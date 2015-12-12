@@ -20,6 +20,7 @@ public class PlayerController : NetworkBehaviour
     public GameObject bullet;
     public GameObject hitBox;
     public PlayerBullet bulletScript;
+    private Timer timer;
     [SyncVar(hook ="UpdateHealthGraphic")]
     public float health;
 
@@ -53,6 +54,8 @@ public class PlayerController : NetworkBehaviour
         hitBox = GameObject.Find("Ari_hitbox");
         hitBoxRend = hitBox.GetComponent<SpriteRenderer>();
 
+        timer = new Timer();
+
         gManager = GameObject.Find("GameManager").GetComponent<gameManager>();
         sManager = GameObject.Find("GameManager").GetComponent<soundManager>();
     }
@@ -64,6 +67,7 @@ public class PlayerController : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer.Update();
         if (isLocalPlayer)
         {
             InputManager();
@@ -152,10 +156,12 @@ public class PlayerController : NetworkBehaviour
         #region Shoot
         if (Input.GetButton("Shoot") || Input.GetKey(KeyCode.Z))
         {
-           
             // If Not fired yet, fire bullets based of Enum
             if (!fired)
             {
+                timer.StartTimer();
+                Debug.Log("Timer Started");
+                fired = true;
                 sManager.audioPlayer.PlayOneShot(sManager.bulletFX, 0.2f);
                 switch (playerStyle)
                 {
@@ -166,6 +172,11 @@ public class PlayerController : NetworkBehaviour
                         fireBulletStyleTwo();
                         break;
                 }
+            }
+            else if (fired)
+            {
+                Debug.Log("Before bulletTimer call");
+                bulletTimer();
             }
         }
         #endregion
@@ -287,10 +298,6 @@ public class PlayerController : NetworkBehaviour
         #endregion
 
         //Call a Coroutine to make a Firing Cooldown, Sets Fire to true for a couple seconds.
-
-
-        StartCoroutine(bulletTimer());
-
     }
     void styleOnePowerTwo() {
         styleOnePowerOne();
@@ -416,11 +423,15 @@ public class PlayerController : NetworkBehaviour
     }
     #endregion
 
-    IEnumerator bulletTimer()
+    void bulletTimer()
     {
-        fired = true;
-        yield return new WaitForSeconds(0.07f);
-        fired = false;
+        if (timer.IsTimePassed(1000))
+        {
+            Debug.Log("Timer Stoped");
+            timer.StopTimer();
+            
+            fired = false;
+        }
     }
 
     public void playDeathSound() 

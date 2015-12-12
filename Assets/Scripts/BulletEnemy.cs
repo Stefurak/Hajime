@@ -49,6 +49,11 @@ public class BulletEnemy : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
             playerScript = player.GetComponent<PlayerController>();
         }
+        else if(GameObject.FindGameObjectsWithTag("Player") == null)
+        {
+            Debug.Log("search for player");
+        }
+            
         if (GameObject.Find("Mayumi") != null)
         {
             enemy = GameObject.Find("Mayumi");
@@ -120,7 +125,7 @@ public class BulletEnemy : MonoBehaviour
 
         #region Border Checks
         //Remove bullets if player is dead or offscreen
-        if (transform.position.x >= 7.9f || 
+        if (transform.position.x >= 10.0f || 
             transform.position.x <= -10.0f || 
             transform.position.y >= 10f || 
             transform.position.y <= -10f ||
@@ -138,8 +143,8 @@ public class BulletEnemy : MonoBehaviour
     {
         if (c.gameObject.tag == "Player") {
             //Invoke("respawnPlayer()", 4f);
-            Destroy(c.transform.parent.gameObject);
-            
+            c.transform.parent.gameObject.SetActive(false);
+            //c.enabled = false;
         }
     }
     void OnTriggerExit2D(Collider2D c)
