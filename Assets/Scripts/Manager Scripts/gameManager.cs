@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class gameManager : MonoBehaviour
 
     #region GUI Variables
     //GUI Variables
+    Canvas canvas;
+    Text gText;
     public float game_width = 1024;
     public float game_height = 768;
     public float rx
@@ -46,19 +49,35 @@ public class gameManager : MonoBehaviour
         sManager.songPlaying = false;
         sManager.currentSong = soundManager.songState.Title;
 
-        //Set The state to start in here
-        //activeState = new beginState(this, this.GetComponent<soundManager>());
-        //Debug.Log("this object is of type " + activeState);
+        mayumi.isActiveAndEnabled.Equals(false);
+        //Doesnt seem to be working right now
+        GUI.Label(new Rect(10, 15, 200, 200), "JUST WRITE SOMETHING");
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (gameObject.tag == "EnemyHP")
+        {
 
-	}
+            Debug.Log("its going in");
+            displayHP = mayumi.health;
+            OnGUI();
+            //GUI.Label(new Rect(200, 15, 120, 120), "Enemy Health: " + displayHP.ToString());
+        }
+        else if (gameObject.tag == "PlayerHP")
+        {
+            Debug.Log("its going in");
+            //displayHP = PlayerController.;
+        }
+    }
 
     void OnGUI()
     {
-   
+            Debug.Log("onGUI");
+            if(gameObject.tag=="EnemyHP")
+                canvas.GetComponent<Text>().text = "Enemy Health: " + displayHP.ToString();
+            //GUI.Label(new Rect(650, 100, 120, 120), "Enemy Health: " + displayHP.ToString());
     }
 
 

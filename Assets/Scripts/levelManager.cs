@@ -33,9 +33,6 @@ public class levelManager : NetworkBehaviour
     void Start () {
         sManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<soundManager>();
 
-        Debug.Log("We got here Stage1 not set yet.");
-        Debug.Log(sManager.currentSong);
-
         sManager.audioPlayer.Stop();
         sManager.songPlaying = false;
         sManager.currentSong = soundManager.songState.Stage1;

@@ -44,13 +44,10 @@ public class PlayerBullet : NetworkBehaviour
     }
     void OnTriggerEnter2D(Collider2D c)
     {
-        Debug.Log("on enter");
         if (c.gameObject.tag == "Enemy")
-        {
-            Debug.Log("with enemy");
+        {        
             c.gameObject.GetComponent<Boss_Mayumi>().decreaseHealth();
             NetworkServer.Destroy(transform.gameObject);
-            
         }
     }
     void OnTriggerExit2D(Collider2D c)

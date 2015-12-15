@@ -45,6 +45,7 @@ public class PlayerController : NetworkBehaviour
         playerPower = powerState.powerOne;
         playerStyle = styleState.styleOne;
 
+        health = 4;
         speed = 8;
         angle = 0;
         anim = this.GetComponent<Animator>();
@@ -160,7 +161,6 @@ public class PlayerController : NetworkBehaviour
             if (!fired)
             {
                 timer.StartTimer();
-                Debug.Log("Timer Started");
                 fired = true;
                 sManager.audioPlayer.PlayOneShot(sManager.bulletFX, 0.2f);
                 switch (playerStyle)
@@ -425,7 +425,7 @@ public class PlayerController : NetworkBehaviour
 
     void bulletTimer()
     {
-        if (timer.IsTimePassed(1000))
+        if (timer.IsTimePassed(250))
         {
             Debug.Log("Timer Stoped");
             timer.StopTimer();

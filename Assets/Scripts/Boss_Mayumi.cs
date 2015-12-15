@@ -150,7 +150,6 @@ public class Boss_Mayumi : NetworkBehaviour
             }
         }
         #endregion
-
     }
     public void decreaseHealth() {
         if (!reseting)
@@ -224,7 +223,6 @@ public class Boss_Mayumi : NetworkBehaviour
         timeValue = new Vector2(startTime, endTime);
         //The Current Position of the Line
         startPos = transform.position;
-        Debug.Log(moveCount);
         //The ending position of the Line
         //If Time is 1 Then the rotated endingPos is the exact ending position.
         //Setting the endTime will extend it past that point.

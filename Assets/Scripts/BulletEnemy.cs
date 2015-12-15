@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class BulletEnemy : MonoBehaviour
+public class BulletEnemy : NetworkBehaviour
 {
     #region Fields
     private Animator bullet;
@@ -145,10 +146,14 @@ public class BulletEnemy : MonoBehaviour
             //Invoke("respawnPlayer()", 4f);
             c.transform.parent.gameObject.SetActive(false);
             //c.enabled = false;
+            if (isLocalPlayer)
+            {
+                //c.
+            }
         }
     }
     void OnTriggerExit2D(Collider2D c)
-    {
+    {     
         //Might need this later
     }
 

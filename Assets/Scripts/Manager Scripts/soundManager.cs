@@ -66,8 +66,7 @@ public class soundManager : MonoBehaviour {
                     audioPlayer.PlayOneShot(Title, 0.5f);
                     songPlaying = true;
                     break;
-                case songState.Stage1:
-                    Debug.Log("Why is this not playing!!!!!!!.");
+                case songState.Stage1:                    
                     audioPlayer.PlayOneShot(Stage1, 0.3f);
                     songPlaying = true;
                     break;
